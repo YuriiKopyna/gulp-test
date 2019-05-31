@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
+const sass = require('gulp-sass');
 
 gulp.task('message', async function() {
     console.log("HTTP Server Started");
@@ -29,3 +30,9 @@ gulp.task('minify', async function() {
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
 });
+//Compile sass
+gulp.task('sass', () => 
+    gulp.src('src/sass/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('dist/css'))
+);
