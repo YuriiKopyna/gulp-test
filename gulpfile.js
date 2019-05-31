@@ -28,4 +28,4 @@ gulp.task('sass', async function() {
         .pipe(gulp.dest('dist/css'))
 });
 //All tasks in 1 command
-gulp.task('default', ['copyHtml', 'imageMin', 'minify', 'sass']);
+gulp.task('default', gulp.series(['copyHtml', 'imageMin', 'minify', 'sass']));
