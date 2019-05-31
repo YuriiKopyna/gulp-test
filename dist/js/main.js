@@ -1,0 +1,1 @@
+console.log("some text"),console.log("more some text"),console.log("this is file 2");
